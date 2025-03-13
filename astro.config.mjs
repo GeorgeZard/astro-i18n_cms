@@ -2,7 +2,6 @@ import { defineConfig } from "astro/config";
 import icon from "astro-icon";
 import i18n from "@astrolicious/i18n";
 import sitemap from "@astrojs/sitemap";
-import cloudflare from "@astrojs/cloudflare";
 
 export default defineConfig({
   site: "https://www.yourwebsite.com", // update me!
@@ -32,9 +31,4 @@ export default defineConfig({
       },
     }),
   ],
-  adapter: cloudflare({
-    platformProxy: {
-      enabled: true,
-    },
-  }),
 });

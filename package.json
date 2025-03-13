@@ -6,10 +6,9 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro build && wrangler dev",
+    "preview": "astro preview",
     "astro": "astro",
-    "check": "astro build && tsc && wrangler deploy --dry-run",
-    "deploy": "astro build && wrangler deploy",
+    "deploy": "astro build",
     "types": "wrangler types"
   },
   "dependencies": {
