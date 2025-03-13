@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "include": [
+    "/*"
+  ],
+  "exclude": [
+    "/_astro/*",
+    "/assets/*",
+    "/favicon.*",
+    "/robots.txt",
+    "/sitemap*.xml",
+    "/*.webp",
+    "/*.jpg",
+    "/*.png",
+    "/*.svg"
+  ],
+  "routes": [
+    {
+      "src": "^/fr/.*",
+      "dest": "/fr/:splat"
+    },
+    {
+      "src": "^/(about|blog|contact|projects)/?$",
+      "dest": "/$1/index.html"
+    },
+    {
+      "src": "^/404$",
+      "dest": "/404.html"
+    },
+    {
+      "src": "^/$",
+      "dest": "/index.html"
+    }
+  ]
+}

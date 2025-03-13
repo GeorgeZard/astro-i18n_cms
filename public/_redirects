@@ -1,1 +1,23 @@
-/:lang/* /:lang/404/ 404
+# Static assets
+/_astro/* /_astro/:splat 200
+/assets/* /assets/:splat 200
+/favicon.svg /favicon.svg 200
+/robots.txt /robots.txt 200
+/sitemap*.xml /sitemap:splat.xml 200
+
+# Handle French routes
+/fr/* /fr/:splat 200
+
+# Handle direct file access (no redirects)
+/*.html :splat.html 200
+/*/*.html :splat.html 200
+
+# Handle directories
+/about    /about/index.html    200
+/blog     /blog/index.html     200
+/contact  /contact/index.html  200
+/projects /projects/index.html 200
+
+# Homepage and 404
+/         /index.html          200
+/404      /404.html           200

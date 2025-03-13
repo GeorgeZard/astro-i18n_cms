@@ -526,11 +526,45 @@ You only need to change the path of the asset you want to preload. The rest is m
 <a name="deployment"></a>
 
 ## Deployment
-0. Before you deploy, it is recommended to test the build. Run `npm run build` to build the project. Once done, run `npm run preview` which you can access on http://localhost:4321/. This allows you to test your website as if it was deployed on your host.
-1. Ensure the astro.config.mjs, client.json, robots.txt and \_redirects have been filled out and updated. 
-2. Netlify is the recommended hosting provider. If you choose another one, make sure to modify the `_redirects` code to handle the 404 page. 
-Navigate to your Netlify Admin Panel, click _Add new site | Import an existing project_
-3. Follow the instructions to connect your GitHub repository to Netlify and deploy.
+
+### Testing Your Build Locally
+Before you deploy, it is recommended to test the build:
+1. Run `npm run build` to build the project
+2. Run `npm run preview` to preview the build at http://localhost:4321/
+3. This allows you to test your website as if it was deployed on your host
+
+### Deploying to Netlify
+1. Ensure the astro.config.mjs, client.json, robots.txt and \_redirects have been filled out and updated
+2. Navigate to your Netlify Admin Panel, click _Add new site | Import an existing project_
+3. Follow the instructions to connect your GitHub repository to Netlify and deploy
+
+### Deploying to Cloudflare Pages
+This project includes configuration for deploying to Cloudflare Pages:
+
+1. **Prerequisites**:
+   - A Cloudflare account
+   - The Wrangler CLI installed (`npm install -g wrangler`)
+   - Logged in to Wrangler (`wrangler login`)
+
+2. **First-time Setup**:
+   - Create a new Cloudflare Pages project in the Cloudflare dashboard
+   - Set the project name to match the one in your wrangler.toml (default: "astro-i18n-cms")
+   - Set the build command to `npm run build`
+   - Set the build output directory to `dist`
+
+3. **Deployment Options**:
+   - **Manual Deployment**: Run `npm run deploy` to deploy your site
+   - **Production Deployment**: Run `npm run deploy:prod` to build and deploy to the main branch
+   - **Preview Deployment**: Run `npm run deploy:preview` to deploy to a preview branch (set BRANCH_NAME environment variable)
+
+4. **Continuous Deployment**:
+   - Connect your GitHub repository to Cloudflare Pages in the Cloudflare dashboard
+   - Cloudflare will automatically build and deploy your site when you push to your repository
+
+5. **Environment Variables**:
+   - Set any required environment variables in the Cloudflare Pages dashboard under Settings > Environment variables
+
+The project includes a `wrangler.toml` file with the necessary configuration for Cloudflare Pages deployment.
 
 
 <a name="acknowledgments"></a>

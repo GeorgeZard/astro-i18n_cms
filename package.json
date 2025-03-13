@@ -6,10 +6,14 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "preview": "astro build && wrangler dev",
+    "astro": "astro",
+    "check": "astro build && tsc && wrangler deploy --dry-run",
+    "deploy": "astro build && wrangler deploy",
+    "types": "wrangler types"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "^12.1.0",
     "@astrojs/sitemap": "^3.2.1",
     "@astrolicious/i18n": "^0.6.1",
     "astro": "^5.4.2",
@@ -17,5 +21,9 @@
     "autoprefixer": "^10.4.20",
     "i18next": "^23.16.8",
     "less": "^4.2.1"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250204.0",
+    "wrangler": "^3.32.0"
   }
 }
